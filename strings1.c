@@ -1,16 +1,24 @@
 #include "shell.h"
 
 
-
 /**
-*src - source
+*cmd- command prompt
+*strtok- string token
+*perror- path error
+*lineptr- line pointer
+*alloc- allocation
+*args- argument
+*int- integer
+*src- source
 *str- string
 *chr- character
 *len- length
-*const-constant
+*const- constant
 *des- destination
+*strlen-string length
 *strcpy- string copy
 *strdup- string duplicate
+*strncmp- string compare 
 */
 
 
@@ -40,6 +48,7 @@ int _strcmp(const char *s1, const char *s2)
 /**
  * _strlen - Calculates the length of a string.
  * @s: Pointer to a string.
+ *
  * Return: The length of the string.
  */
 
@@ -65,7 +74,8 @@ int _strlen(const char *s)
  * _strchr - Locates the first occurrence of a character in a string.
  * @s: The string to be searched.
  * @c: The character to be found.
- * Return: A pointer to the first occurrence of c in s, or null if not found.
+ *
+ * Return: A pointer to the first occurrence of c in s, or NULL if not found.
  */
 
 
@@ -83,7 +93,7 @@ const char *_strchr(const char *s, int c)
     if (c == '\0')
         return (s);
 
-    return (null);
+    return (NULL);
 }
 
 
@@ -93,8 +103,10 @@ const char *_strchr(const char *s, int c)
  * destination buffer pointed to by dest.
  * @dest: Pointer to the destination buffer.
  * @src: Pointer to the source string.
+ *
  * Return: Pointer to dest.
  */
+
 
 
 char *_strcpy(char *dest, const char *src)
@@ -114,7 +126,8 @@ char *_strcpy(char *dest, const char *src)
 /*
  * _strdup - Duplicates the content of the string pointed to by s.
  * @s: Pointer to the string to be duplicated.
- * Return: Pointer to the duplicated string or null if memory allocation fails.
+ *
+ * Return: Pointer to the duplicated string or NULL if memory allocation fails.
  */
 
 
@@ -125,14 +138,14 @@ char *_strdup(const char *s)
     int length;
     char *duplicate;
 
-    if (s == null)
-        return (null);
+    if (s == NULL)
+        return (NULL);
 
     length = strlen(s) + 1;
     duplicate = (char *)malloc(length);
 
-    if (duplicate == null)
-        return (null)
+    if (duplicate == NULL)
+        return (NULL);
 
     strcpy(duplicate, s);
 
