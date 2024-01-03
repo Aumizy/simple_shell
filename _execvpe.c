@@ -2,6 +2,27 @@
 
 
 
+/**
+*cmd- command prompt
+*strtok- string token
+*perror- path error
+*lineptr- line pointer
+*alloc- allocation
+*args- argument
+*int- integer
+*src- source
+*str- string
+*chr- character
+*len- length
+*const- constant
+*des- destination
+*strlen-string length
+*strcpy- string copy
+*strdup- string duplicate
+*strncmp- string compare 
+*/
+
+
 
 /**
 * _execvpe - Execute a new process image.
@@ -20,7 +41,6 @@ int _execvpe(const char *cmd, char *argv[], char *const envp[])
 	char *path, *token, *executable;
 	size_t cmd_len, token_len, e_len;
 
-	/*  Pass the content of PATH to the variable 'path'. */
 	path = getenv("PATH");
 	if (path == NULL)
 	{
@@ -28,16 +48,16 @@ int _execvpe(const char *cmd, char *argv[], char *const envp[])
 		exit(EXIT_FAILURE);
 	}
 	cmd_len = _strlen(cmd);
-	/* 'path' is a colon-separated string. Tokenize each string. */
+	
 	token = _strtok(path, ":");
 
 	while (token != NULL)
 	{
-		/* Try executing 'cmd' without the specified path. */
+	
 		execve(cmd, argv, envp);
 
 		token_len = _strlen(token);
-		/* Merge 'path' with 'cmd'. */
+	
 		e_len = (token_len + cmd_len + 2) * sizeof(char);
 		executable = malloc((e_len) * sizeof(char));
 		if (executable == NULL)
@@ -47,13 +67,13 @@ int _execvpe(const char *cmd, char *argv[], char *const envp[])
 		}
 		snprintf(executable, e_len, "%s/%s", token, cmd);
 
-		/* Attempt to execute 'cmd' with the modified 'path' */
+	
 		execve(executable, argv, envp);
 
-		/* If the code reaches here, it means execve failed. Try the next path */
+	
 		token = _strtok(NULL, ":");
 	}
-	/* If the code reaches here, it means we have exhausted all paths in the 'path' variable. */
+	
 	perror("execve");
 	exit(EXIT_FAILURE);
 }

@@ -3,6 +3,26 @@
 
 
 /**
+*cmd- command prompt
+*strtok- string token
+*perror- path error
+*lineptr- line pointer
+*alloc- allocation
+*int- integer
+*src- source
+*str- string
+*chr- character
+*len- length
+*const- constant
+*des- destination
+*strcpy- string copy
+*strdup- string duplicate
+*strncmp- string compare 
+*/
+
+
+
+/**
  * _getline - Reads a complete line from the specified file input stream.
  * @lineptr: Pointer to the buffer that holds the line being read.
  * @alloc_size: Pointer to the allocated buffer size.

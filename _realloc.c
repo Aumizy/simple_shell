@@ -3,6 +3,28 @@
 
 
 /**
+*cmd- command prompt
+*strtok- string token
+*perror- path error
+*lineptr- line pointer
+*alloc- allocation
+*args- argument
+*int- integer
+*src- source
+*str- string
+*chr- character
+*len- length
+*const- constant
+*des- destination
+*strlen-string length
+*strcpy- string copy
+*strdup- string duplicate
+*strncmp- string compare 
+*/
+
+
+
+/**
  * _realloc - Adjusts the allocation of a memory block..
  * @ptr: Pointer to the previous memory block.
  * @new_size: Updated size of the memory block..

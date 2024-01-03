@@ -3,6 +3,28 @@
 
 
 /**
+*cmd- command prompt
+*strtok- string token
+*perror- path error
+*lineptr- line pointer
+*alloc- allocation
+*args- argument
+*int- integer
+*src- source
+*str- string
+*chr- character
+*len- length
+*const- constant
+*des- destination
+*strlen-string length
+*strcpy- string copy
+*strdup- string duplicate
+*strncmp- string compare 
+*/
+
+
+
+/**
 * __exit - Exits the current process.
 * @args: Array containing the arguments of the command.
 * Return: (1) in case the command "exit" is provided

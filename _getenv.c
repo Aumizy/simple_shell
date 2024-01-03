@@ -2,6 +2,27 @@
 
 
 
+/**
+*cmd- command prompt
+*strtok- string token
+*perror- path error
+*lineptr- line pointer
+*alloc- allocation
+*args- argument
+*int- integer
+*src- source
+*str- string
+*chr- character
+*len- length
+*const- constant
+*des- destination
+*strlen-string length
+*strcpy- string copy
+*strdup- string duplicate
+*strncmp- string compare 
+*/
+
+
 
 /**
  * _getenv - Retrieves the value of an environment variable
@@ -14,22 +35,22 @@
 
 char *_getenv(const char *name)
 {
-	/* Declare 'env' as an array of environment variables (char *). */
+
 	char **env = environ, *env_var, *value;
 
-	/* Error handling: 'name' must be a valid string. */
+
 	if (name == NULL || name[0] == '\0')
 		return (NULL);
 
-	/* Iterate through all the enviroment variables */
+
 	while (*env)
 	{
-		/* Tokenize each one with the delimiter "=". */
+
 		env_var = _strtok(_strdup(*env), "=");
 		if (env_var == NULL)
 			return (NULL);
 
-		/* Verify if the provided name matches the first token (variable name). */
+
 		if (_strcmp(env_var, name) == 0)
 		{
 			value = _strtok(NULL, "=");
